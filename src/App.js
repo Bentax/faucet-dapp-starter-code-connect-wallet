@@ -5,6 +5,8 @@ import faucetContract from "./ethereum/faucet";
 
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
+  const [signer, setSigner] = useState();
+  const [fcContract, setFcContract] = useState();
 
   useEffect(() => {
     getCurrentWalletConnected();
@@ -14,10 +16,14 @@ function App() {
   const connectWallet = async () => {
     if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
       try {
-        /* MetaMask is installed */
-        const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
+        /* Get provider */
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        /* Get accounts */
+        const accounts = await provider.send("eth_requestAccounts", []);
+        /* Get signer */
+        setSigner(provider.getSigner());
+        /* local contract instance */
+        setFcContract(faucetContract(provider));
         setWalletAddress(accounts[0]);
         console.log(accounts[0]);
       } catch (err) {
@@ -32,10 +38,16 @@ function App() {
   const getCurrentWalletConnected = async () => {
     if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
       try {
-        const accounts = await window.ethereum.request({
-          method: "eth_accounts",
-        });
+        /* Get provider */
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        /* Get accounts */
+        const accounts = await provider.send("eth_accounts", []);
+        
         if (accounts.length > 0) {
+            /* Get signer */
+          setSigner(provider.getSigner());
+            /* local contract instance */
+          setFcContract(faucetContract(provider));
           setWalletAddress(accounts[0]);
           console.log(accounts[0]);
         } else {
