@@ -7,6 +7,9 @@ function App() {
   const [walletAddress, setWalletAddress] = useState("");
   const [signer, setSigner] = useState();
   const [fcContract, setFcContract] = useState();
+  const [withdrawError, setWithdrawError] = useState("");
+  const [withdrawSuccess, setWithdrawSuccess] = useState("");
+  const [transactionData, setTransactionData] = useState("");
 
   useEffect(() => {
     getCurrentWalletConnected();
@@ -75,6 +78,22 @@ function App() {
     }
   };
 
+  const getOCTHandler = async () => {
+    setWithdrawError("");
+    setWithdrawSuccess("");
+    try {
+      const fcContractWithSigner = fcContract.connect(signer);
+      const resp = fcContractWithSigner.requestTokens();
+      console.log(resp);
+      setWithdrawSuccess("Operation Succeeded - Enjoy your tokens!");
+      setTransactionData(resp.hash);
+    } catch (error) {
+      console.error(error.message);
+      //setWithdrawError(error.message);
+      setWithdrawError("U have it... Try again 1 hour latter...");
+    }
+  }
+
   return (
     <div>
       <nav className="navbar">
@@ -106,6 +125,14 @@ function App() {
           <div className="container has-text-centered main-content">
             <h1 className="title is-1">Faucet</h1>
             <p>Fast and reliable. 50 OCT/day.</p>
+            <div className="mt-5">
+              {withdrawError && (
+                <div className="withdraw-error">{withdrawError}</div>
+              )}
+              {withdrawError && (
+                <div className="withdraw-success">{withdrawSuccess}</div>
+              )}{" "}
+            </div>
             <div className="box address-box">
               <div className="columns">
                 <div className="column is-four-fifths">
@@ -113,10 +140,15 @@ function App() {
                     className="input is-medium"
                     type="text"
                     placeholder="Enter your wallet address (0x...)"
+                    defaultValue={walletAddress}
                   />
                 </div>
                 <div className="column">
-                  <button className="button is-link is-medium">
+                  <button 
+                  className="button is-link is-medium" 
+                  onClick={getOCTHandler}
+                  desabled={walletAddress ? false : true}
+                  >
                     GET TOKENS
                   </button>
                 </div>
@@ -124,7 +156,7 @@ function App() {
               <article className="panel is-grey-darker">
                 <p className="panel-heading">Transaction Data</p>
                 <div className="panel-block">
-                  <p>transaction data</p>
+                  <p>{transactionData ? `Transaction hash: ${transactionData}` : "--"}</p>
                 </div>
               </article>
             </div>

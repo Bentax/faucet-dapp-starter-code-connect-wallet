@@ -1,1 +1,5 @@
+Ocean Token (OCT) smart contract address (Goerli):
+0x2225d9117e37329713884942992EE040B742D906
+
+Faucet smart contract address (Goerli):
 0xE16738Fb636c83b198A71368dd0D580FBc3B993B
