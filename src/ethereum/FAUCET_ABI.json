@@ -1,6 +1,4 @@
-import {ethers} from 'ethers';
-
-const faucetAbi = [
+[
 	{
 		"inputs": [
 			{
@@ -76,10 +74,4 @@ const faucetAbi = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
-const faucetContract = (provider) => {
-    return new ethers.Contract("0x677ad79e081445985885a109d6b59973803dbd4f", faucetAbi, provider);
-
-};
-
-export default faucetContract;
+]
