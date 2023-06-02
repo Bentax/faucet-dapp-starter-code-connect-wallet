@@ -1,6 +1,6 @@
 [
   {
-    "inputs": [
+    inputs: [
       {
         internalType: "address",
         name: "tokenAddress",
