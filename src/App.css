@@ -18,7 +18,7 @@ body {
 }
 
 .panel-heading {
-  xbackground-image: linear-gradient(to left,#38052F, #070709);
+  background-image: linear-gradient(to left,#38052F, #070709);
   background-color: black;
   color: white;
 }
