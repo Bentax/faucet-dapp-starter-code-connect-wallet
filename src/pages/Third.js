@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Web3 from 'web3';
 import DAOContract from './contracts/DAOContract.json';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 
 const web3 = new Web3(Web3.givenProvider);
-const contractAddress = 'YOUR_CONTRACT_ADDRESS';
+const contractAddress = '0x13420a409b91e441CE52223ee28595D1b68c82DC';
 
 function Third() {
   const [account, setAccount] = useState('');

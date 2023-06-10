@@ -1,25 +1,22 @@
 import { Outlet, Link } from "react-router-dom";
+import "../App.css";
 
 
 const Layout = () => {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Faucet</Link>
-          </li>
-          <li>
-            <Link to="/second">Second</Link>
-          </li>
-          <li>
-            <Link to="/dao">DAO</Link>
-          </li>
-        </ul>
+    <div>
+      <nav className="navbar navbar-item">
+        
+            <Link to="/">⛏Faucet</Link>
+          
+            <Link to="/second">🦄Second</Link>
+          
+            <Link to="/third">👍Third</Link>
+          
       </nav>
 
       <Outlet />
-    </>
+    </div>
   )
 };
 

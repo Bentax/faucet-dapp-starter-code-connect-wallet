@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<First />} />
           <Route path="second" element={<Second />} />
-          <Route path="dao" element={<Third />} />
+          <Route path="third" element={<Third />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
