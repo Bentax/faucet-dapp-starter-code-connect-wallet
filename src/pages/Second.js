@@ -99,7 +99,7 @@ function Second() {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <h1 className="navbar-item is-size-4">Antlaws DAO Token (ADAO)</h1>
+            <h1 className="navbar-item is-size-4">Token Mumbai testnet DAO</h1>
           </div>
           <div id="navbarMenu" className="navbar-menu">
             <div className="navbar-end is-align-items-center">
@@ -109,7 +109,7 @@ function Second() {
               >
                 <span className="is-link has-text-weight-bold">
                   {walletAddress && walletAddress.length > 0
-                    ? `Connected: ${walletAddress.substring(
+                    ? `🦊Connected: ${walletAddress.substring(
                         0,
                         6
                       )}...${walletAddress.substring(38)}`
@@ -123,8 +123,9 @@ function Second() {
       <section className="hero is-fullheight">
         <div className="faucet-hero-body">
           <div className="container has-text-centered main-content">
-            <h1 className="title is-1">Faucet</h1>
-            <p>Fast and reliable. 1 ADAO/hour.</p>
+          <h1 className="title is-1">Let's get your own token!</h1>
+            <p>Add <a href="https://metamask.io/download/" target="_blank">Metamask🦊</a> in your browser</p>
+            <p>Get <a href="https://mumbaifaucet.com/" target="_blank">Mumbai🔴</a> test coin in your Metamask</p>
             <div className="mt-5">
               {withdrawError && (
                 <div className="withdraw-error">{withdrawError}</div>

@@ -7,11 +7,11 @@ const Layout = () => {
     <div>
       <nav className="navbar navbar-item">
         
-            <Link to="/">⛏Faucet</Link>
+            <Link to="/">🟢</Link>
           
-            <Link to="/second">🦄Second</Link>
+            <Link to="/second">🔴</Link>
           
-            <Link to="/third">👍Third</Link>
+            <Link to="/third">🟡</Link>
           
       </nav>
 

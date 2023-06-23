@@ -99,7 +99,7 @@ function First() {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <h1 className="navbar-item is-size-4">Antlaws DAO Token (ADAO) Faucet</h1>
+            <h1 className="navbar-item is-size-4">Token Sepolia testnet ADAO</h1>
           </div>
           <div id="navbarMenu" className="navbar-menu">
             <div className="navbar-end is-align-items-center">
@@ -125,7 +125,7 @@ function First() {
           <div className="container has-text-centered main-content">
             <h1 className="title is-1">Go!</h1>
             <p>Add <a href="https://metamask.io/download/" target="_blank">Metamask🦊</a> in your browser</p>
-            <p>Get <a href="https://sepoliafaucet.com/" target="_blank">Sepolia🟡</a> test coin in your Metamask</p>
+            <p>Get <a href="https://sepoliafaucet.com/" target="_blank">Sepolia🟢</a> test coin in your Metamask</p>
             <div className="mt-5">
               {withdrawError && (
                 <div className="withdraw-error">{withdrawError}</div>
