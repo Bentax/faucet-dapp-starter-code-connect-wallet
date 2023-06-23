@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../App.css";
 import { ethers } from "ethers";
-import faucetContract from "../ethereum/faucet";
+import faucetContract from "../ethereum/faucet2";
 
 function Second() {
   const [walletAddress, setWalletAddress] = useState("");
@@ -125,7 +125,8 @@ function Second() {
           <div className="container has-text-centered main-content">
           <h1 className="title is-1">Let's get your own token!</h1>
             <p>Add <a href="https://metamask.io/download/" target="_blank">Metamask🦊</a> in your browser</p>
-            <p>Get <a href="https://mumbaifaucet.com/" target="_blank">Mumbai🔴</a> test coin in your Metamask</p>
+            <p>Go to <a href="https://mumbai.polygonscan.com/" target="_blank">Mumbai-Poligon-Scaner</a> and click 🦊Add_Mumbai_Network button in the right down coner</p>
+            <p>Get <a href="https://mumbaifaucet.com/" target="_blank">MATIC🔴</a> test coin in your Metamask</p>
             <div className="mt-5">
               {withdrawError && (
                 <div className="withdraw-error">{withdrawError}</div>
