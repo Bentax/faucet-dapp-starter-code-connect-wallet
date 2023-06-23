@@ -99,7 +99,7 @@ function First() {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <h1 className="navbar-item is-size-4">Token Sepolia testnet ADAO</h1>
+            <h1 className="navbar-item is-size-4">Token Sepolia testnet ADAO 0x59e97e0e02a33cc3483227357df31f81d44b7c85</h1>
           </div>
           <div id="navbarMenu" className="navbar-menu">
             <div className="navbar-end is-align-items-center">

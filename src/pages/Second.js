@@ -82,8 +82,8 @@ function Second() {
     setWithdrawError("");
     setWithdrawSuccess("");
     try {
-      const fcContractWithSigner = fcContract.connect(signer);
-      const resp = fcContractWithSigner.requestTokens();
+      const fcContractWithSigner = await fcContract.connect(signer);
+      const resp = await fcContractWithSigner.requestTokens();
       console.log(resp);
       setWithdrawSuccess("Operation Succeeded - Enjoy your tokens!");
       setTransactionData(resp.hash);
@@ -99,7 +99,7 @@ function Second() {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <h1 className="navbar-item is-size-4">Token Mumbai testnet DAO</h1>
+            <h1 className="navbar-item is-size-4">Token Mumbai testnet XDAO - 0x75F5BA4E578c85f4158296353F6d2874284964EA</h1>
           </div>
           <div id="navbarMenu" className="navbar-menu">
             <div className="navbar-end is-align-items-center">
@@ -127,6 +127,7 @@ function Second() {
             <p>Add <a href="https://metamask.io/download/" target="_blank">Metamask🦊</a> in your browser</p>
             <p>Go to <a href="https://mumbai.polygonscan.com/" target="_blank">Mumbai-Poligon-Scaner</a> and click 🦊Add_Mumbai_Network button in the right down coner</p>
             <p>Get <a href="https://mumbaifaucet.com/" target="_blank">MATIC🔴</a> test coin in your Metamask</p>
+            <p>Add token number <b>0x75F5BA4E578c85f4158296353F6d2874284964EA</b> in your Metamask</p>
             <div className="mt-5">
               {withdrawError && (
                 <div className="withdraw-error">{withdrawError}</div>

@@ -6,15 +6,9 @@ const Layout = () => {
   return (
     <div>
       <nav className="navbar navbar-item">
-        
             <Link to="/">🟢</Link>
-          
-            <Link to="/second">🔴</Link>
-          
-            <Link to="/third">🟡</Link>
-          
+            <Link to="/third">🔴</Link>
       </nav>
-
       <Outlet />
     </div>
   )
